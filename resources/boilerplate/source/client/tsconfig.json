@@ -1,0 +1,34 @@
+{
+	"compilerOptions": {
+		"lib": ["es5", "es6", "esnext"],
+		"module": "esnext",
+		"moduleResolution": "node",
+		"target": "esnext",
+
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"removeComments": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"preserveConstEnums": true,
+
+		"noImplicitAny": true,
+		"sourceMap": false,
+		
+		"rootDir": "./",
+		"outDir": "../../client",
+
+		"baseUrl": ".",
+		"paths": {
+			"client/*": ["./*"]
+		}
+	},
+	"compileOnSave": true,
+	"include": [
+		"./**/*.ts"
+	],
+	"exclude": [
+		"alt",
+		"natives"
+	]
+}

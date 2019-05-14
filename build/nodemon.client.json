@@ -1,0 +1,11 @@
+{
+	"watch": [
+		"resources/boilerplate/client"
+	],
+	"exec": "npm run build:client:fixJS",
+	"ignore": [
+		".git",
+		"node_modules"
+	],
+	"ext": "js"
+}
