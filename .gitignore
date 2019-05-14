@@ -1,9 +1,4 @@
-
-crashdumps/
 node_modules/
-cache/
-data/
-modules/
 
 server.log
 package-lock.json
