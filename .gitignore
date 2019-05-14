@@ -1,10 +1,5 @@
 node_modules/
-
-server.log
 package-lock.json
-node.dll
-altv-server.exe
-file.txt
 
 resources/boilerplate/client/*
 resources/boilerplate/server/*
