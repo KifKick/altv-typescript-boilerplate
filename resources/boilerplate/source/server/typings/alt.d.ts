@@ -43,23 +43,6 @@ declare module "alt" {
 		readonly seat: number;
 		readonly health: number;
 		model: string;
-		_inventory: [];
-		dist: number;
-
-		/**
-		 * discord module
-		 */
-		socialclub: string;
-		discord: playerDiscord;
-		
-		/**
-		 * levels
-		 */
-		level: { currentXP: number; currentLevel: number; };
-		setLevel: (newLevel: number) => void;
-		setXP: (newXP: number) => void;
-		changeXP: (xpAmount: number) => void;
-		hasReachedMaxLevel: () => boolean;
 
 		setDateTime(day: number, month: number, year: number, hour: number, minute: number, second: number): void;
 		setWeather(weather: number): void;
@@ -67,23 +50,6 @@ declare module "alt" {
 		spawn(x: number, y: number, z: number, delay: number): void;
 
 		kick(): void;
-
-		/**
-		 * inventory system 
-		 */
-
-		getInventory(): void;
-		setInventory({ }: any): void;
-		hasItem(itemKey: string): void;
-		hasItemWithData(itemKey: string, data: any): void;
-		getItemIndex(itemKey: string): void;
-		getItemIndexWithData(itemKey: string, data: any): void;
-		getItemAmount(itemKey: string): void;
-		getItemAmountWithData(itemKey: string, data: any): void;
-		getTotalItemAmount(): void;
-		giveItem(itemKey: string, amount: number, data: any): void;
-		useItem(itemIdx: number): void;
-		removeItem(itemIdx: number, amount: number): void;
 	}
 
 	export const players: Player[];

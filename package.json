@@ -4,17 +4,14 @@
 	"description": "altv typescript boilerplate with TypeORM",
 	"main": "index.js",
 	"scripts": {
-		"watch": "npm-run-all --parallel watch:server:ts watch:server:js watch:client:ts watch:client:js",
+		"update": "node build/updateServerFiles.js",
+		"watch": "npm-run-all --parallel watch:server watch:client",
 		"build": "npm run build:server && npm run build:client",
-		"watch:server": "npm-run-all --parallel watch:server:ts watch:server:js",
-		"watch:server:ts": "tsc -p resources/boilerplate/source/server --watch",
-		"watch:server:js": "nodemon --config build/nodemon.server.json",
+		"watch:server": "tsc-watch -p resources/boilerplate/source/server --onSuccess \"npm run build:server:renameJS\"",
 		"build:server": "npm run build:server:tsc && npm run build:server:renameJS",
 		"build:server:tsc": "tsc -p resources/boilerplate/source/server",
 		"build:server:renameJS": "npx rename js mjs --path resources/boilerplate/server",
-		"watch:client": "npm-run-all --parallel watch:client:ts watch:client:js",
-		"watch:client:ts": "tsc -p resources/boilerplate/source/client --watch",
-		"watch:client:js": "nodemon --config build/nodemon.client.json",
+		"watch:client": "tsc-watch -p resources/boilerplate/source/client --onSuccess \"npm run build:client:fixJS\"",
 		"build:client": "npm run build:client:tsc && npm run build:client:fixJS",
 		"build:client:tsc": "tsc -p resources/boilerplate/source/client",
 		"build:client:fixJS": "node build/rebuildClientPathes.js"
@@ -27,14 +24,15 @@
 		"typeorm-esm": "^0.2.15-dev10"
 	},
 	"devDependencies": {
+		"axios": "^0.18.0",
 		"@types/fs-extra": "^5.0.5",
 		"@types/lodash": "^4.14.123",
-		"@types/module-alias": "^2.0.0",
 		"@types/node": "^11.13.4",
 		"lodash": "^4.17.11",
 		"npm-run-all": "^4.1.5",
 		"recursive-rename": "^2.0.0",
 		"replace-in-file": "^4.0.0",
+		"tsc-watch": "^2.2.1",
 		"typescript": "^3.4.4"
 	}
 }
