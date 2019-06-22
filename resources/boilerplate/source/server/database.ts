@@ -1,6 +1,8 @@
+import * as alt from 'alt'
 import { createConnection, Connection, ConnectionOptions } from 'typeorm-esm'
 import path from 'path'
 import fs from 'fs-extra'
+import chalk from 'chalk'
 
 import { ExampleModel } from './models/ExampleModel'
 
@@ -13,15 +15,16 @@ const config: ConnectionOptions = {
 
 let conn: Connection = null
 
-createConnection(config)
-	.then(async (connection) => {
-		conn = connection
-		console.log('Database connected successfully')
-	})
-	.catch(err => {
-		console.log(err)
-	})
 
-export const getConnection = () => {
-	return conn
+export const getConnection = async () => {
+	try {
+		if (conn === null) {
+			const connection = await createConnection(config)
+			conn = connection
+			alt.log(chalk.greenBright('Database connected successfully'))
+		}
+		return conn
+	} catch (err) {
+		console.log(err)
+	}
 }

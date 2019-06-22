@@ -21,7 +21,8 @@
 	"dependencies": {
 		"fs-extra": "^7.0.1",
 		"mysql": "^2.16.0",
-		"typeorm-esm": "^0.2.15-dev10"
+		"typeorm-esm": "^0.2.15-dev10",
+		"chalk": "^2.4.2"
 	},
 	"devDependencies": {
 		"axios": "^0.18.0",
