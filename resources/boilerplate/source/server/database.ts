@@ -7,7 +7,7 @@ import chalk from 'chalk'
 import { ExampleModel } from './models/ExampleModel'
 
 const config: ConnectionOptions = {
-	...fs.readJsonSync(path.join(path.resolve(), 'ormconfig.json')),
+	...fs.readJsonSync(path.join(alt.rootDir, 'ormconfig.json')),
 	entities: [
 		ExampleModel
 	]

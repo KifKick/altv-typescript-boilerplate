@@ -22,13 +22,13 @@ const download = async (url, filename) => {
 const updateServer = async () => {
 	try {
 		await Promise.all([
-			download('https://alt-cdn.s3.nl-ams.scw.cloud/server/stable/x64_win32/data/vehmodels.bin', 'data/vehmodels.bin'),
-			download('https://alt-cdn.s3.nl-ams.scw.cloud/server/stable/x64_win32/data/vehmods.bin', 'data/vehmods.bin'),
-			download('https://alt-cdn.s3.nl-ams.scw.cloud/node-module/stable/x64_win32/node-module.dll', 'modules/node-module.dll'),
-			download('https://alt-cdn.s3.nl-ams.scw.cloud/server/stable/x64_win32/altv-server.exe', 'altv-server.exe'),
+			download('https://alt-cdn.s3.nl-ams.scw.cloud/server/beta/x64_win32/data/vehmodels.bin', 'data/vehmodels.bin'),
+			download('https://alt-cdn.s3.nl-ams.scw.cloud/server/beta/x64_win32/data/vehmods.bin', 'data/vehmods.bin'),
+			download('https://alt-cdn.s3.nl-ams.scw.cloud/node-module/beta/x64_win32/node-module.dll', 'modules/node-module.dll'),
+			download('https://alt-cdn.s3.nl-ams.scw.cloud/server/beta/x64_win32/altv-server.exe', 'altv-server.exe'),
 			download('https://alt-cdn.s3.nl-ams.scw.cloud/alt-node/node.dll', 'node.dll')
 		])
-		
+
 		console.log('Successfully downloaded newest server files from altv.mp')
 	} catch (err) {
 		console.error(err)
