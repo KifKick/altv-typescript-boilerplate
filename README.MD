@@ -15,9 +15,8 @@ This boilerplate presents usage of TypeScript in clientside and serverside.
 
 ## Watchers
 
-There is a 3 watchers that you can use.
+There is a 2 watchers that you can use.
 
- - `npm run watch` - it watches client & server
  - `npm run watch:client` - it watches client
  - `npm run watch:server` - it watches server
 

@@ -1,10 +1,10 @@
 import path from 'path'
-// tslint:disable: import-name
 import typescript from 'rollup-plugin-typescript2'
-import resolve from 'rollup-plugin-node-resolve'
+import resolve from '@rollup/plugin-node-resolve'
 import builtins from 'rollup-plugin-node-builtins'
-import json from 'rollup-plugin-json'
+import json from '@rollup/plugin-json'
 import { terser } from 'rollup-plugin-terser'
+import { eslint } from 'rollup-plugin-eslint'
 
 export default {
 	input: path.resolve(__dirname, 'index.ts'),
@@ -13,13 +13,16 @@ export default {
 		format: 'esm',
 	},
 
-	external: ['alt', 'natives'],
+	external: ['alt', 'alt-client', 'natives'],
 
 	plugins: [
+		eslint(),
 		typescript({
 			tsconfig: path.resolve(__dirname, 'tsconfig.json'),
 		}),
-		resolve(),
+		resolve({
+			preferBuiltins: true,
+		}),
 		builtins(),
 		json(),
 		terser(),

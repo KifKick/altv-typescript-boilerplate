@@ -1,4 +1,4 @@
-import * as alt from 'alt'
+import * as alt from 'alt-server'
 import { createConnection, Connection, ConnectionOptions } from 'typeorm-esm'
 import path from 'path'
 import fs from 'fs-extra'

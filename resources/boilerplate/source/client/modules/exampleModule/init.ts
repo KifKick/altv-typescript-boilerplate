@@ -1,4 +1,4 @@
-import alt from 'alt'
+import alt from 'alt-client'
 import exampleFunction from 'client/modules/exampleModule/functions/exampleFunction'
 
 export default async () => {

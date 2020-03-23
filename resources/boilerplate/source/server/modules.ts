@@ -1,4 +1,4 @@
-import * as alt from 'alt'
+import * as alt from 'alt-server'
 import chalk from 'chalk'
 import { getConnection } from './database'
 
