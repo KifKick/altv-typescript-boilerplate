@@ -1,25 +1,30 @@
 {
 	"compilerOptions": {
-		"lib": ["es5", "es6", "esnext"],
+		"lib": [
+			"es6",
+			"esnext",
+			"es2019",
+			"es2020"
+		],
 		"module": "esnext",
 		"moduleResolution": "node",
-		"target": "esnext",
-
+		"target": "es2019",
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"removeComments": true,
 		"experimentalDecorators": true,
-		"emitDecoratorMetadata": true,
+		"emitDecoratorMetadata": false,
 		"preserveConstEnums": true,
-
 		"noImplicitAny": true,
 		"sourceMap": false,
-		
 		"rootDir": "./",
 		"outDir": "../../server"
 	},
 	"compileOnSave": true,
 	"include": [
 		"./**/*.ts"
+	],
+	"exclude": [
+		"./rollup.config.ts",
 	]
 }

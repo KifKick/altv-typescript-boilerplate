@@ -1,5 +1,5 @@
 import * as alt from 'alt-server'
-import { createConnection, Connection, ConnectionOptions } from 'typeorm-esm'
+import { createConnection, Connection, ConnectionOptions } from 'typeorm'
 import path from 'path'
 import fs from 'fs-extra'
 import chalk from 'chalk'

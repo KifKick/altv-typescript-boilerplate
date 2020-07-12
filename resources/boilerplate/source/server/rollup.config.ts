@@ -3,8 +3,8 @@ import path from 'path'
 import typescript from 'rollup-plugin-typescript2'
 import autoExternal from 'rollup-plugin-auto-external'
 import resolve from '@rollup/plugin-node-resolve'
-import builtins from 'rollup-plugin-node-builtins'
 import json from '@rollup/plugin-json'
+import builtinModules from 'builtin-modules'
 import { terser } from 'rollup-plugin-terser'
 import { eslint } from 'rollup-plugin-eslint'
 
@@ -12,10 +12,10 @@ export default {
 	input: path.resolve(__dirname, 'index.ts'),
 	output: {
 		file: path.resolve(__dirname, '..', '..', 'server', 'index.bundle.js'),
-		format: 'esm',
+		format: 'cjs',
 	},
 
-	external: ['alt-server'],
+	external: ['alt', 'alt-server', ...builtinModules],
 
 	plugins: [
 		eslint(),
@@ -28,8 +28,10 @@ export default {
 			packagePath: path.resolve(__dirname, '..', '..', '..', '..', 'package.json'),
 			peerDependencies: false,
 		}),
-		builtins(),
-		resolve(),
+		resolve({
+			preferBuiltins: true,
+			extensions: ['.ts', '.js', '.json']
+		}),
 		json(),
 		terser(),
 	],

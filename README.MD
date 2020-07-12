@@ -28,6 +28,11 @@ There is a 3 build cmds that you can use
  - `npm run build:client` - it builds client only
  - `npm run build:server` - it builds server only
 
+## Other cmds
+
+- `npm run updateDeps` - it updates your packages to newest version
+
+
 
 **Enjoy, KifKick**
 
