@@ -1,3 +1,3 @@
-/// <reference types="@altv/types" />
+/// <reference types="@altv/types-server" />
 import 'reflect-metadata'
 import './modules'

@@ -6,3 +6,4 @@ package-lock.json
 resources/boilerplate/client/*
 resources/boilerplate/server/*
 !*.gitkeep
+pnpm-lock.yaml

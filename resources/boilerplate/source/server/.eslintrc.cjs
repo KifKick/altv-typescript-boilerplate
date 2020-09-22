@@ -47,7 +47,6 @@ module.exports = {
 		// Replace Airbnb 'camelcase' rule with '@typescript-eslint' version
 		// https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/camelcase.md
 		camelcase: 'off',
-		'@typescript-eslint/camelcase': baseStyleRules.camelcase,
 
 		// Replace Airbnb 'func-call-spacing' rule with '@typescript-eslint' version
 		// https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/func-call-spacing.md
